@@ -1,0 +1,24 @@
+def is_leap(year):
+    leap = False
+    if 1900 <= year <= 10**5:
+        
+        if year % 400 == 0:
+            leap = True
+            return leap
+        
+        elif year % 100 == 0:
+            leap = False
+            return leap
+        
+        elif year % 4 == 0:
+            leap = True
+            return leap
+        
+        else:
+            leap = False
+            return leap
+    
+    else:
+        return "the number not in the range"
+    
+    return leap
