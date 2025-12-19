@@ -1,0 +1,10 @@
+t = int(input())
+
+for _ in range(t):
+    a_len = int(input())
+    A = set(input().split())
+
+    b_len = int(input())
+    B = set(input().split())
+
+    print(A.issubset(B))
