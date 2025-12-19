@@ -1,0 +1,11 @@
+import numpy as np
+N, M, P= map(int, input().split())
+
+array_1=[list(map(int,input().split())) for _ in range(N)]
+array_2=[list(map(int,input().split())) for _ in range(M)]
+
+A=np.array(array_1)
+B=np.array(array_2)
+
+result = np.concatenate((A, B), axis=0)
+print(result)
