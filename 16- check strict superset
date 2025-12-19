@@ -1,0 +1,13 @@
+A = set(input().split())
+t = int(input())
+
+result = True   
+
+for _ in range(t):
+    other = set(input().split())
+
+
+    if not (A.issuperset(other) and A != other):
+        result = False
+
+print(result)
