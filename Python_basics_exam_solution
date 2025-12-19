@@ -1,0 +1,76 @@
+Question1
+class Car:
+    def __init__(self, max_speed, unit):
+        self.max_speed = max_speed
+        self.unit = unit
+
+    def __str__(self):
+        return "Car with the maximum speed of {} {}".format(self.max_speed, self.unit)
+
+
+class Boat:
+    def __init__(self, max_speed):
+        self.max_speed = max_speed
+
+    def __str__(self):
+        return "Boat with the maximum speed of {} knots".format(self.max_speed)
+
+
+q = int(raw_input())
+
+for _ in range(q):
+    parts = raw_input().split()
+    vehicle_type = parts[0].lower()
+
+    if vehicle_type == "car":
+        speed = int(parts[1])
+        unit = parts[2]
+        print(Car(speed, unit))
+
+    elif vehicle_type == "boat":
+        speed = int(parts[1])
+        print(Boat(speed))
+------------------------------------------------
+Question 2
+class Item:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = []
+
+    def add(self, item):
+        self.items.append(item)
+
+    def total(self):
+        return sum(item.price for item in self.items)
+
+    def __len__(self):
+        return len(self.items)
+
+
+n_items = int(input())
+
+items = {}
+for _ in range(n_items):
+    name, price = input().split()
+    items[name] = Item(name, int(price))
+
+cart = ShoppingCart()
+
+# number of operations
+q = int(input())
+
+for _ in range(q):
+    command = input().strip()
+
+    if command == "len":
+        print(len(cart))
+    elif command == "total":
+        print(cart.total())
+    else:
+        _, item_name = command.split()
+        cart.add(items[item_name])
