@@ -1,0 +1,14 @@
+N, X = map(int, input().split())
+
+
+totals = [0] * N
+
+
+for _ in range(X):
+    marks = list(map(float, input().split()))
+    for i in range(N):
+        totals[i] += marks[i]
+
+
+for total in totals:
+    print(f"{total / X:.1f}")
