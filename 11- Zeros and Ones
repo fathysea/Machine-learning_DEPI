@@ -1,0 +1,11 @@
+import numpy as np
+
+dim = map(int, input().split())
+
+
+arr_SHAPE = tuple(dim)
+A = np.zeros(arr_SHAPE, dtype=int)
+B = np.ones(arr_SHAPE, dtype=int)
+
+print(A)
+print(B)
